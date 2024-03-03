@@ -7,9 +7,17 @@ let input1 = document.getElementById("input1");
 
     newh.innerHTML = input1.value;
 
-    newh.className = "statment";
-   
-    document.getElementById("statments").appendChild(newh);
+    // newh.className = "statment";
+
+    // document.getElementById("statments").appendChild(newh);
+    const items=document.querySelector('.item_list')
+    const item=document.createElement('div')
+    
+    item.setAttribute('class','item')
+    item.appendChild(newh)
+    item.appendChild(checkbox)
+    items.appendChild(item)
+
     input1.value="";
 }
 
