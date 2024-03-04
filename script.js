@@ -14,8 +14,8 @@ let input1 = document.getElementById("input1");
     const item=document.createElement('div')
     
     item.setAttribute('class','item')
-    item.appendChild(newh)
     item.appendChild(checkbox)
+    item.appendChild(newh)
     items.appendChild(item)
 
     input1.value="";

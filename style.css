@@ -42,11 +42,11 @@ h3{
 .item_list{
     display: block;
     margin: 1em auto;
-    width: 18rem;
+    width: 30rem;
 }
 .item{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 1.5em;
     margin: 1em 0;
 }
