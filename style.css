@@ -1,6 +1,11 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    border: none;
+
 }
 body{
     background-image: url(photo.jpg);
@@ -8,12 +13,18 @@ body{
 h1{
     display: flex;
     justify-content: center;
-    font-size: 80px;
+    font-size: 70px;
+    margin-top:15px;
+    /* font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: italic; */
+    font-family: cursive;
 }
 .input_div{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3vw;
 }
 #input1{
     margin-right: 10px;
@@ -21,32 +32,57 @@ h1{
     width: 400px;
     border-radius: 180px;
     font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-left: 10px;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    border: none;
+    background-color: rgba(184, 184, 241, 0.409);
+    box-shadow: 4px 4px 7px black;
+    
+    
 }
 input::placeholder{
     font-size: 35px;
-    padding: 85px;
-    color: black;
+    text-align: center;
+    color: rgb(228, 204, 204);
     font-family: cursive;
 }
 #button1{
-    height: 65px;
+    height: 60px;
     width: 100px;
     border-radius: 180px;
     font-size: 30px;
+    border: none;
+    margin-left: 15px;
+    background-color: rgba(55, 55, 106, 0.409);
+    color: rgb(215, 236, 255);
+    box-shadow: 4px 4px 7px black;
 }
 h3{
     font-size: 30px;
 }
 .item_list{
     display: block;
-    margin: 1em auto;
+    margin: 5em auto;
     width: 30rem;
+    /* padding:2vw; */
+    border-radius:15px;
+    background-color: rgba(18, 19, 46, 0.459);
+    text-align: center;
+    color: rgb(211, 227, 230);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.575);
+    
+    
+
 }
 .item{
     width: 100%;
     display: flex;
     gap: 1.5em;
-    margin: 1em 0;
+    /* margin: 0px 15px 0px 25px; */
+    padding: 15px 15px 15px 30px;
+    margin: auto;
+    
 }
