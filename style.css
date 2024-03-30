@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('photo.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    min-height: 100vh; /* Set minimum height to 100% viewport height */
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.input_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#input1 {
+    margin-right: 10px;
+    height: 60px;
+    width: 400px;
+    border-radius: 30px;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+input::placeholder {
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    font-family: cursive;
+}
+
+#button1 {
+    height: 60px;
+    width: 100px;
+    border-radius: 30px;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.item_list {
+    margin: 1em auto;
+    max-width: 30rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin: 1em 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
