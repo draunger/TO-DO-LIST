@@ -1,46 +1,54 @@
-let button = document.getElementById("button1");
-let input1 = document.getElementById("input1");
+const taskInput = document.getElementById('taskInput');
+const addTaskBtn = document.getElementById('addTaskBtn');
+const taskList = document.getElementById('taskList');
 
-// Function to add a task
-function show() {
-    if (input1.value === "") {
-        input1.value = "task not entered";
-        setTimeout(() => input1.value = "", 500);
+// Function to create a task item
+function createTask(taskText) {
+  const taskDiv = document.createElement('div');
+  taskDiv.classList.add('task');
+
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+
+  const taskSpan = document.createElement('span');
+  taskSpan.textContent = taskText;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = '✖';
+
+  taskDiv.append(checkbox, taskSpan, deleteBtn);
+  taskList.appendChild(taskDiv);
+
+  // Mark task complete on checkbox
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      taskSpan.style.textDecoration = 'line-through';
     } else {
-        var newh = document.createElement("span");
-        var checkbox = document.createElement("input");
-        var crossButton = document.createElement("button");
-        
-        checkbox.type = "checkbox";
-        crossButton.innerHTML = "✖";
-        newh.innerHTML = input1.value;
-
-        const items = document.querySelector('.item_list');
-        const item = document.createElement('div');
-
-        item.setAttribute('class', 'item');
-        item.appendChild(checkbox);
-        item.appendChild(newh);
-        item.appendChild(crossButton);
-        items.appendChild(item);
-        input1.value = "";
-
-        checkbox.addEventListener('change', () => {
-            items.removeChild(item);
-        });
-
-        crossButton.addEventListener('click', () => {
-            newh.style.textDecoration = "line-through";
-        });
+      taskSpan.style.textDecoration = 'none';
     }
+  });
+
+  // Delete task
+  deleteBtn.addEventListener('click', () => {
+    taskDiv.remove();
+  });
 }
 
-// Add event listener to the button
-button.addEventListener('click', show);
+// Handle adding a task
+function addTask() {
+  const taskText = taskInput.value.trim();
 
-// Add event listener to the input field for the Enter key
-input1.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        show();
-    }
+  if (!taskText) {
+    taskInput.placeholder = "Please enter a task!";
+    return;
+  }
+
+  createTask(taskText);
+  taskInput.value = '';
+  taskInput.placeholder = "Add your task...";
+}
+
+addTaskBtn.addEventListener('click', addTask);
+taskInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') addTask();
 });
