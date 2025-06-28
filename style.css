@@ -87,3 +87,18 @@ h1 {
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+#clearAllBtn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #dc3545;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#clearAllBtn:hover {
+  background-color: #c82333;
+}
