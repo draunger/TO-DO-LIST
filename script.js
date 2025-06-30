@@ -2,8 +2,9 @@ const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 const clearAllBtn = document.getElementById('clearAllBtn');
+const clearAllContainer = document.getElementById('clearAllContainer');
 
-// Create a task item
+
 function createTask(taskText, completed = false) {
   const taskDiv = document.createElement('div');
   taskDiv.classList.add('task');
@@ -23,6 +24,7 @@ function createTask(taskText, completed = false) {
 
   taskDiv.append(checkbox, taskSpan, deleteBtn);
   taskList.appendChild(taskDiv);
+  updateClearButton();
 
   checkbox.addEventListener('change', () => {
     taskSpan.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
@@ -32,6 +34,7 @@ function createTask(taskText, completed = false) {
   deleteBtn.addEventListener('click', () => {
     taskDiv.remove();
     saveTasks();
+    updateClearButton();
   });
 }
 
@@ -48,6 +51,7 @@ function addTask() {
   taskInput.value = '';
   taskInput.placeholder = "Add your task...";
   saveTasks();
+  updateClearButton();
 }
 
 // Save to localStorage
@@ -65,13 +69,20 @@ function saveTasks() {
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks.forEach(task => createTask(task.text, task.completed));
+  updateClearButton();
 }
 
 // Clear all tasks
 clearAllBtn.addEventListener('click', () => {
   taskList.innerHTML = '';
   localStorage.removeItem('tasks');
+  updateClearButton();
 });
+
+// Update Clear All button visibility
+function updateClearButton() {
+  clearAllContainer.style.display = taskList.children.length > 0 ? 'block' : 'none';
+}
 
 // Event Listeners
 addTaskBtn.addEventListener('click', addTask);

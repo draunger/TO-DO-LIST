@@ -88,6 +88,12 @@ h1 {
   cursor: pointer;
 }
 
+#clearAllContainer {
+  text-align: center;
+  margin-top: 1rem;
+  display: none; /* Hidden by default */
+}
+
 #clearAllBtn {
   padding: 0.8rem 2rem;
   border: none;
